@@ -1,6 +1,6 @@
 # app.py
 import streamlit as st
-from pages_uses import accueil, cartographie, prediction, evolution, menu
+from pages_uses import accueil, cartographie, prediction, evolution, navbar, topbar
 
 
 # Initialisation de l'état de la page si nécessaire
@@ -8,7 +8,9 @@ if 'page' not in st.session_state:
     st.session_state.page = 'Accueil'  # Page par défaut
 
 # Afficher le menu latéral
-menu.show_menu()
+#topbar.show_topbar
+navbar.show_menu()
+
 
 # Affichage du contenu en fonction de la page sélectionnée
 if st.session_state.page == 'Accueil':
