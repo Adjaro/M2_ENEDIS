@@ -1,6 +1,6 @@
 # app.py
 import streamlit as st
-from pages_uses import accueil, cartographie, prediction, evolution, navbar, topbar
+from pages_uses import accueil,cartographie, prediction, evolution, navbar, topbar
 
 
 # Initialisation de l'état de la page si nécessaire

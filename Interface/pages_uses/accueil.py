@@ -1,12 +1,28 @@
+import os
 import streamlit as st
 
 def show():
     st.header("À Propos")
-    st.write("""
-        Bienvenue sur notre application de prédiction des prix immobiliers. GreenTech Solutions est une société de services qui développe des applications.
-        Une agence immobilière sollicite l'entreprise afin d'aider ses commerciaux à mieux estimer les biens à vendre.
+
+    # Construire le chemin de l'image de manière dynamique
+    image_path = 'D:/M2UNIVLYON2/python_project/Performance_Energetique/Interface/assets/img/dpe.jpg'
+
+    # Vérifier si l'image existe avant de l'afficher
+    if os.path.exists(image_path):
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            st.image(image_path, width=300)  # Affiche l'image au centre
+    else:
+        st.error("Image non trouvée : " + image_path)
+
+    # Afficher le texte
+    st.write(
+        """
+        Bienvenue sur l'application GreenTech Solutions, un allié pour optimiser la performance énergétique des logements. 
+        L'application analyse les données des habitations pour prédire leur consommation électrique. 
         
-        Pour cela, vous devrez développer une application permettant de mieux comprendre le marché et d'estimer le prix de vente des nouveaux biens.
-        
-        **Objectif** : Estimer le montant du prix de vente d'un bien.
-    """)
+        Elle évalue et classe chaque logement selon la classe de Diagnostic de Performance Énergétique (DPE), 
+        facilitant ainsi des choix éclairés. Avec une interface intuitive, l'accès à des informations cruciales sur l'efficacité 
+        énergétique est rapide et facile.
+        """
+    )
